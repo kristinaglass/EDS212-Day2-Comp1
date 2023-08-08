@@ -1,0 +1,40 @@
+---
+title: "Day2-Comp1"
+format: html
+editor: visual
+---
+
+## Derivatives in R
+
+```{r}
+fx = expression(3.1 * (x ^ 4) -28 * x)
+
+#This is not executed (a comment)
+#this is storing the derivative expression
+df_dx <- D(fx, 'x')
+
+#this is calling it back
+df_dx
+
+x <- 10
+
+eval(df_dx)
+```
+
+\
+Try finding the slope of g(z) = 2z \^3 - 10.5z \^2 +4.1 at z = 3.6
+
+```{r}
+
+gz <- expression(2 * z^3 - 10.5 * z^2 + 4.1)
+
+##storing expression
+dg_dz <- D(gz, 'z')
+
+##calling it back
+dg_dz
+
+z <- seq(from = 1, to = 3, length = 20)
+
+eval(dg_dz)
+```
